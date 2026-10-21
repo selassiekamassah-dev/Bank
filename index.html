@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Bank Queue Manager</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="page">
+    <h1>Bank Queue Manager</h1>
+
+    <div class="layout">
+      <div class="left">
+        <section class="serving" aria-label="Now serving">
+          <p class="label">Now serving</p>
+          <p class="serving-ticket" id="serving-ticket">-</p>
+          <p class="serving-name" id="serving-name">Nobody yet</p>
+          <button type="button" class="btn btn-primary" id="next-btn">Call next customer</button>
+        </section>
+
+        <form id="add-form" class="add-form" novalidate>
+          <div class="field">
+            <label for="name-input">Customer name</label>
+            <input id="name-input" type="text" maxlength="30" autocomplete="off">
+          </div>
+          <button type="submit" class="btn">Issue ticket</button>
+        </form>
+        <p id="message" class="message" role="status" aria-live="polite"></p>
+
+        <h2>Recently served</h2>
+        <ul id="served-list" class="plain-list"></ul>
+      </div>
+
+      <section class="right" aria-labelledby="queue-title">
+        <h2 id="queue-title">Waiting queue</h2>
+        <p id="status" class="status"></p>
+        <ol id="queue-list" class="queue-list"></ol>
+        <div class="actions">
+          <button type="button" class="btn" id="sample-btn">Reset sample queue</button>
+          <button type="button" class="btn" id="clear-btn">Clear queue</button>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
